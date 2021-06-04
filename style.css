@@ -24,5 +24,119 @@
 ::after {
     box-sizing: border-box;
 }
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    color: var(--white-light);
+    background-color: var(--dark);
+    --webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: var(--white);
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+.min-vh-100 {
+    min-height: 100vh;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
+ /* Costume Scrollbar  */
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+
+/* -------------------- ABOUT SECTION START ------------------------ */
+.about-section .min-vh-100 {
+    padding: 60px 15px;
+}
+.about-content {
+    max-width: 620px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin: 0 0 25px;
+}
+
+.about-content h1 {
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+
+.about-content p span {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.about-content p a {
+    position: relative;
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.about-content p a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    background-color: var(--main-color);
+    transition: width 0.3s ease;
+}
+.about-content p a:hover::before {
+    width: 100%;
+}
+
+.about-content h2 {
+    margin: 20px 0 5px;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+.about-content .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.about-content .skill-item {
+    background-color: var(--dark-light);
+    margin: 4px 2px 0;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+/* -------------------- ABOUT SECTION END ------------------------ */
