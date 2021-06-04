@@ -1,0 +1,28 @@
+/* FONT  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+
+/* VARIABLE  */
+:root {
+    --main-color: #2cd3e9;
+    --dark: #1b1b22;
+    --dark-light: #32323a;
+    --white: #fff;
+    --white-light: #c8c8c8;
+}
+
+
+/* -------------------- Global Setting ----------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+
