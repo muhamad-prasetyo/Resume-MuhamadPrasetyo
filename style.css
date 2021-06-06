@@ -52,6 +52,7 @@ h1,h2,h3,h4,h5,h6 {
 .container {
     max-width: 1170px;
     margin: auto;
+    width: 100%;
 }
 .min-vh-100 {
     min-height: 100vh;
@@ -575,6 +576,56 @@ button {
     width: 100%;
     transition-delay: 0s;
 }
+.pp-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    visibility: hidden;
+}
+.pp-overlay.prev,
+.pp-overlay.next {
+    visibility: visible;
+}
+.pp-overlay::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--dark);
+}
+.pp-overlay.next::before{
+    animation: nextItem 1s ease forwards;
+}
+@keyframes nextItem {
+    0% {
+        transform: translateX(-100%);
+    }
+    40%,60% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+.pp-overlay.prev::before{
+    animation: prevItem 1s ease forwards;
+}
+@keyframes prevItem {
+    0% {
+        transform: translateX(100%);
+    }
+    40%,60% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
 .pp-inner {
     height: 100vh;
     padding: 0 15px;
@@ -687,8 +738,126 @@ button {
 
 }
 
-
-
-
-
 /* ----------------------- PORTFOLIO SECTION  END --------------------- */
+
+
+/* Contact SECTION  */
+.contact-section.active {
+    display: flex;
+}
+
+.contact-content {
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+.contact-text {
+    margin-bottom: 30px;
+}
+.contact-info-item {
+    margin-bottom: 10px;
+}
+.contact-info-item {
+    font-size: 24px;
+    font-weight: 600;
+}
+.contact-info-item .social-links a {
+    height: 40px;
+    width: 40px;
+    border: 1px solid var(--white-light);
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white-light);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    margin: 0 3px;
+}
+.contact-info-item .social-links a:hover{
+    color: var(--main-color);
+    border-color:var(--main-color);
+}
+.contact-info-item .social-links span {
+    margin-right: 4px;
+}
+.contact-content .toggle-contact-form-btn {
+    margin-top: 30px;
+}
+
+/* Contact-Form  */
+.contact-form{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 200;
+    visibility: hidden;
+}
+.contact-form.open {
+    visibility: visible;
+}
+.contact-form-inner {
+    background-color: var(--dark-light);
+    height: 100vh;
+    padding: 50px 15px;
+    display: flex;
+    transform: translateY(-100%);
+    transition: all 0.5s ease 0.5s;
+}
+.contact-form.open .contact-form-inner{
+    transform: translateY(0%);
+    transition-delay: 0s;
+    overflow-y: auto;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: auto;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+}
+.contact-form.open .contact-form-container {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.5s;
+}
+
+.contact-form form {
+    padding: 50px 0 0;
+}
+
+.contact-form .input-group {
+    margin-bottom: 30px;
+    width: 100%;
+}
+.contact-form .input-control::placeholder {
+    color: var(--white-light);
+}
+.contact-form .input-control {
+    height: 50px;
+    display: block;
+    width: 100%;
+    padding: 0 15px;
+    font-family: inherit;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--white-light);
+    color: var(--white);
+    transition: all 0.5s ease;
+}
+.contact-form .input-control:focus {
+    background-color: var(--dark);
+    border-color: transparent;
+}
+
+.contact-form textarea.input-control {
+    height: 120px;
+    padding-top: 15px;
+    resize: none;
+}

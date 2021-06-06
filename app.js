@@ -148,7 +148,25 @@ function changePortfolioItem(direction) {
     else {
         portfolioItemIndex++;
     }
-    document.querySelector(".pp-inner").scrollTo(0,0);
-    portfolioItemDetails();
-    updateNextPrevItem();
+    document.querySelector(".pp-overlay").classList.add(direction);
+    setTimeout(() => {
+        document.querySelector(".pp-inner").scrollTo(0,0);
+        portfolioItemDetails();
+        updateNextPrevItem();
+    },400);
+    setTimeout(() => {
+        document.querySelector(".pp-overlay").classList.remove(direction);
+    }, 1000);
+    
 }
+
+
+
+// --------------------- Toggle Contact Form ----------------------------------
+
+document.addEventListener("click", (e) => {
+    if(e.target.classList.contains("toggle-contact-form-btn")) {
+        document.querySelector(".contact-form").classList.toggle("open");
+        toggleBodyScrolling();
+    }
+});
