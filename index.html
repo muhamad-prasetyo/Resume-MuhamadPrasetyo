@@ -10,6 +10,15 @@
 </head>
 <body>
 
+    <!-- Page Loader Start  -->
+    <div class="page-loader">
+        <div class="page-loader-inner">
+            <div class="circle"></div>
+            Loading
+        </div>
+    </div>
+    <!-- Page Loader End  -->
+
     <!-- BACKROUND ANIMATION START  -->
     <div class="bg-animation-effect"></div>
     <!-- BACKGROUND ANIMATION END  -->
@@ -42,9 +51,9 @@
                 <nav class="nav">
                     <div class="nav-inner">
                         <ul>
-                            <li><a href="#" class="nav-item">about</a></li>
-                            <li><a href="#" class="nav-item">portfolio</a></li>
-                            <li><a href="#" class="nav-item">contact</a></li>
+                            <li><a href="#about" class="nav-item link-item">about</a></li>
+                            <li><a href="#portfolio" class="nav-item link-item">portfolio</a></li>
+                            <li><a href="#contact" class="nav-item link-item">contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -55,7 +64,7 @@
 
 
     <!-- Section About start -->
-    <section class="about-section">
+    <section class="about-section active" id="about">
         <div class="container">
             <div class="row min-vh-100">
                 <div class="about-content">
@@ -64,9 +73,9 @@
                     </div>
                     <br>
                     <h1>Hi, My name is Muhamad Prasetyo.</h1>
-                    <p>I'm a <span>Web Developer</span> in living Jakarta, Indonesia. Check out my latest work on the <a href="#">portfolio page</a>. want to talk about a project? You can get in touch with me</p>
+                    <p>I'm a <span>Web Developer</span> in living Jakarta, Indonesia. Check out my latest work on the <a href="#portfolio" class="link-item">portfolio page</a>. want to talk about a project? You can get in touch with me</p>
                     <ul>
-                        <li><a href="#">Get Started <span></span><span></span><span></span><span></span></a></li>
+                        <li><a href="#contact" class="link-item">Get Started <span></span><span></span><span></span><span></span></a></li>
                     </ul>
                     
                   
@@ -86,7 +95,7 @@
     <!-- Section About end  -->
 
     <!-- Portfolio section start  -->
-    <section class="portfolio-section sec-padding hidden">
+    <section class="portfolio-section sec-padding" id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="section-title">
@@ -259,7 +268,7 @@
 
     
     <!-- Contact Section star  -->
-    <section class="contact-section sec-padding min-vh-100 hidden">
+    <section class="contact-section sec-padding min-vh-100" id="contact">
         <div class="container">
             <div class="row">
                 <div class="section-title">

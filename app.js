@@ -1,6 +1,12 @@
 
 
-
+window.addEventListener("load", () => {
+    // ----------------- Page Loader --------------------
+    document.querySelector(".page-loader").classList.add("slide-out-right");
+    setTimeout(() => {
+        document.querySelector(".page-loader").style.display = "none";
+    });
+}, 1000);
 
 // --------------------- Bg Animation Effect ----------------------------------
 
@@ -21,6 +27,56 @@ bgAnimationItems();
 
 ////  --------------------- Toggle Navbar ----------------------------------
 const navToggler = document.querySelector(".nav-toggler");
+navToggler.addEventListener("click", toggleNavbar);
+
+function toggleNavbar() {
+    navToggler.classList.toggle("active");
+    document.querySelector(".nav").classList.toggle("open");
+    toggleOverlayEffect();
+    toggleBodyScrolling();
+}
+
+
+// --------------------- Hide &  Show Section ----------------------------------
+
+document.addEventListener("click", (e) => {
+    if(e.target.classList.contains("link-item") && e.target.hash !== "") 
+    {
+        // console.log(e.target.hash);
+        const hash = e.target.hash;
+        if(e.target.classList.contains("nav-item")) 
+        {
+            // console.log("true");
+            activeSection(hash);
+            toggleNavbar();
+        }
+        else {
+            // console.log("false");
+            toggleBodyScrolling();
+            toggleOverlayEffect();
+            document.querySelector(".nav-toggler").classList.add("toggle-hide");
+            setTimeout(() => {
+                activeSection(hash);
+                toggleOverlayEffect();
+                toggleBodyScrolling();
+                document.querySelector(".nav-toggler").classList.remove("toggle-hide");
+            }, 950);
+        }
+    }
+});
+
+function activeSection(sectionId) {
+    document.querySelector("section.active").classList.remove("active");
+    document.querySelector(sectionId).classList.add("active");
+    window.scrollTo(0,0);
+}
+
+
+
+// --------------------- Toggle Overlay Effect ----------------------------------
+function toggleOverlayEffect() {
+    document.querySelector(".overlay-effect").classList.toggle("active");
+}
 
 
 
