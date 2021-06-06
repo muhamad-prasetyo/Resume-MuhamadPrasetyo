@@ -19,6 +19,11 @@ bgAnimationItems();
 
 
 
+////  --------------------- Toggle Navbar ----------------------------------
+const navToggler = document.querySelector(".nav-toggler");
+
+
+
 //  --------------------- Toggle Body Scrolling ----------------------------------
 function toggleBodyScrolling() {
     document.body.classList.toggle("hide-scrolling");

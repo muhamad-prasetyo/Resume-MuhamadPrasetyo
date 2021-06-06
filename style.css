@@ -48,6 +48,9 @@ h1,h2,h3,h4,h5,h6 {
     color: var(--white);
     font-weight: 600;
 }
+ul {
+    list-style: none;
+}
 
 .container {
     max-width: 1170px;
@@ -66,6 +69,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 .sec-padding {
     padding:  100px 0;
+}
+.flex-end {
+    justify-content: flex-end;
 }
 
 /* section title  */
@@ -329,8 +335,124 @@ button {
 
 /* ---------------- BACKGROUND ANIMATION EFFECT END -------------------------- */
 
+/* overlay effect  */
+.overlay-effect {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    visibility: hidden;
+}
+.overlay-effect-item {
+    height: 10vh;
+    background-color: var(--dark-light);
+}
 
 
+/* HEADER  */
+.header {
+    padding: 25px 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+.header .nav-toggler {
+    height: 34px;
+    width: 44px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 101;
+}
+.header .nav-toggler span {
+    height: 2px;
+    width: 30px;
+    background-color: var(--white);
+    display: inline-block;
+    position: relative;
+}
+.header .nav-toggler span::before,
+.header .nav-toggler span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 50%;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}
+.header .nav-toggler span::before {
+    left: 0;
+    transform: translateY(-8px);
+}
+.header .nav-toggler span::after{
+    right: 0;
+    transform: translateY(8px);
+}
+.header .nav-toggler:hover span::before,
+.header .nav-toggler:hover span::after {
+    width: 100%;
+}
+.header .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    overflow-y: auto;
+    visibility: hidden;
+}
+.header .nav-inner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .nav-inner ul {
+    padding: 80px 0;
+}
+.header .nav-inner ul li {
+    text-align: center;
+}
+.header .nav-inner ul a {
+    font-size: 50px;
+    display: inline-block;
+    padding: 8px 0;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--white);
+    position: relative;
+    transition: all 0.3s ease;
+}
+.header .nav-inner ul a::before {
+    content: '';
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: var(--dark);
+    border-radius: 50%;
+    left: 0;
+    top: calc(50% - 50px);
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.header .nav-inner ul a:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+.header .nav-inner ul a:hover {
+    color: var(--main-color);
+}
 /* -------------------- ABOUT SECTION START ------------------------ */
 .about-section .min-vh-100 {
     padding: 60px 15px;
